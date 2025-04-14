@@ -238,4 +238,61 @@ try:
 
 except Exception as e:
     st.error(f"Error fetching or plotting data: {e}")
+
+st.markdown("""
+    ## Dashboard Overview: Options Implied Volatility Analysis
+
+    This dashboard provides a comprehensive visual and statistical analysis of **Implied Volatility (IV)** across various options contracts for a given stock. The data is sourced from Yahoo Finance and dynamically visualized using interactive plots and tables.
+
+    ---
+
+    ### 1. Implied Volatility Surface
+
+    **Description**:  
+    A 3D surface plot displaying how **Implied Volatility (%)** evolves with respect to:
+    - **Strike Price ($)** or **Moneyness (%)**
+    - **Time to Expiration (Years)**
+
+    **Purpose**:  
+    This surface allows users to observe the volatility structure across maturities and strikes. It highlights patterns such as **volatility skew** or **smile**, enabling traders to assess the relative expensiveness of options.
+
+    ---
+
+    ### 2. Implied Volatility Distribution
+
+    **Description**:  
+    A histogram of all calculated implied volatilities, overlaid with a **Kernel Density Estimation (KDE)** curve. A vertical line marks the **mean IV**.
+
+    **Purpose**:  
+    Provides insight into the statistical distribution of implied volatilities. Helps determine whether the current IV landscape is skewed, bimodal, or centered—useful for understanding market sentiment.
+
+    ---
+
+    ### 3. Filtered Options Data
+
+    **Description**:  
+    A tabular display of the options data used to generate all visualizations. Columns include:
+    - Time to Expiration (T)
+    - Strike Price (K)
+    - Moneyness (%)
+    - Implied Volatility (%)
+
+    **Purpose**:  
+    Offers transparency into the underlying dataset. Users can validate calculations, examine specific contracts, or export data for further analysis.
+
+    ---
+
+    ### 4. Volatility Smile / Skew
+
+    **Description**:  
+    A line chart plotting **Implied Volatility (%)** against **Strike Price ($)** for selected expiration dates. Each line corresponds to a distinct expiry.
+
+    **Purpose**:  
+    This classic representation of option pricing asymmetry shows whether options far ITM or OTM are priced with higher or lower implied volatilities. Useful for spotting **smile** or **skew** effects.
+
+    ---
+    
+    """)
+
+
     
